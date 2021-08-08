@@ -11,8 +11,27 @@
 <body <?php body_class('test');?>>
 
 <header>
-<div class="contaner">
-    
+<div class="container">
+    <div class="row ">
+    <div class="col d-flex align-items-center justify-content-between">
+        <span>
+            <a href="<?php bloginfo('url'); ?>">
+                <img src="<?php bloginfo('template_directory');?>/images/logo.png" class="logo img-fluid">
+            </a>
+            <p><?php bloginfo('description');?></p>
+        </span>
+    <!-- </div> -->
+    <!-- <div class="col-sm-auto"> -->
+
+    <?php wp_nav_menu(
+        array(
+            'theme_location' => 'top-menu',
+            'menu_class' => 'top-menu'//add classes to elements
+        )); ?>
+    </div>
+
+    </div>
+
 </div>
 </header>
 

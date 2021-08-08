@@ -11270,7 +11270,86 @@ textarea.form-control-lg {
 }
 header {
   background: #fff;
+  padding: 1rem 1rem;
+  box-shadow: 0px 0px 20px rgba(0, 0, 255, 0.24);
+}
+header .logo {
+  width: 150px;
+  display: inline;
+}
+header .top-menu {
+  margin: 0;
+  display: none;
+}
+@media screen and (min-width: 800px) {
+  header .top-menu {
+    display: flex;
+  }
+}
+header .top-menu li {
+  list-style-type: none;
+}
+header .top-menu li a {
+  text-decoration: none;
+  padding: 0.2rem 0.5rem;
+  margin: 0.5rem;
+  display: block;
+  color: #334257;
+  background-color: #64c9cf;
+  border-radius: 12%;
+}
+header .top-menu li a :hover {
+  color: #64c9cf;
+  background-color: #334257;
+}
+
+footer {
   height: 100px;
   width: 100%;
-  box-shadow: 0px 0px 20px rgba(194, 0, 255, 0.24);
+  background: #f0f0f0;
+}
+
+#hero {
+  height: 200px;
+  width: 100%;
+  background: url("images/hero-img.jpg") #f0f0f0;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+@media screen and (min-width: 800) {
+  #hero {
+    height: 300px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  #hero {
+    height: 400px;
+  }
+}
+#hero .heroH1 {
+  color: #fff;
+}
+
+.mainContainer {
+  padding: 2rem 0;
+}
+
+.content {
+  height: 1000px;
+}
+
+.widget {
+  list-style-type: none;
+  margin: 0;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+}
+.widget li {
+  list-style-type: none;
+}
+.widget li a {
+  text-decoration: none;
+  color: #334257;
 }
