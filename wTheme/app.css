@@ -11269,9 +11269,40 @@ textarea.form-control-lg {
   }
 }
 header {
-  background: #fff;
-  padding: 1rem 1rem;
+  background: #334257;
   box-shadow: 0px 0px 20px rgba(0, 0, 255, 0.24);
+}
+header .accountBar {
+  height: 1.8rem;
+  margin: 0;
+  padding: 0;
+  background: #dddddd;
+  display: none;
+}
+@media screen and (min-width: 400px) {
+  header .accountBar {
+    display: flex;
+  }
+}
+header .accountBar .act-menu {
+  display: flex;
+  margin: 2px;
+}
+header .accountBar .act-menu li {
+  list-style-type: none;
+}
+header .accountBar .act-menu li a {
+  text-decoration: none;
+  font-size: 1rem;
+  padding: 0;
+  /* top | right | bottom | left */
+  margin: 0rem 0.5rem 0rem 0.5rem;
+  display: block;
+  color: #334257;
+}
+header .accountBar .act-menu li:nth-child(2) {
+  border-left: 1px solid #a9a9a9;
+  border-right: 1px solid #a9a9a9;
 }
 header .logo {
   width: 150px;
@@ -11352,4 +11383,19 @@ footer {
 .widget li a {
   text-decoration: none;
   color: #334257;
+}
+
+.blogPost {
+  margin-bottom: 2rem;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
+  border-radius: 0.5rem;
+  padding: 1rem;
+}
+
+.pagination {
+  margin-top: 1rem;
+}
+
+.page-numbers {
+  padding: 0.5rem;
 }

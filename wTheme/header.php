@@ -11,6 +11,17 @@
 <body <?php body_class('test');?>>
 
 <header>
+    <div class="w-100 accountBar">
+    <div class="container p-0 m-0">
+        <div class="row d-flex align-items-center justify-content-between">
+            <?php wp_nav_menu(
+            array(
+                'theme_location' => 'act-menu',
+                'menu_class' => 'act-menu'//add classes to elements
+            )); ?>
+        </div>
+    </div>
+    </div>
 <div class="container">
     <div class="row ">
     <div class="col d-flex align-items-center justify-content-between">

@@ -19,10 +19,23 @@ add_action('wp_enqueue_scripts', 'load_javascript');
 add_theme_support('menus');
 add_theme_support('post-thumbnails');
 
-// Register menu
+// woocommerce
+function mytheme_add_woocommerce_support() {
+    add_theme_support( 'woocommerce' );
+}
+
+add_action( 'after_setup_theme', 'mytheme_add_woocommerce_support' );
+
+// Register menus
 register_nav_menus(
     array (
         'top-menu' => 'Top Menu'
+    )
+    );
+
+    register_nav_menus(
+        array (
+        'act-menu' => 'Act Menu'
     )
     );
 
@@ -44,7 +57,31 @@ register_sidebar(
         )
     );
 
-// Filters
+register_sidebar(
+        array(
+            'name' => 'Blog Sidebar',
+            'id' => 'blog-sidebar',
+            'class' => '',
+            'before_title' => '<h4>',
+            'after_title' => '</h4>'
+            )
+        );
+
+                    // Filters
+
+// ReadMore filter
+function wpdocs_excerpt_more( $more ) {
+    if ( ! is_single() ) {
+        $more = sprintf( '<a class="read-more" href="%1$s">%2$s </a>',
+            get_permalink( get_the_ID() ),
+            __( 'Read More', 'textdomain' )
+        );
+    }
+ 
+    return $more;
+}
+add_filter( 'excerpt_more', 'wpdocs_excerpt_more' );
+
 // Disables the block editor from managing widgets in the Gutenberg plugin.
 add_filter( 'gutenberg_use_widgets_block_editor', '__return_false' );
 // Disables the block editor from managing widgets.
