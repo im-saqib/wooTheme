@@ -26,18 +26,20 @@ header {
           color: $darkBlue;
         }
       }
-      li:nth-child(2) {
+      li:nth-child(2n) {
         border-left: 1px solid #a9a9a9;
         border-right: 1px solid #a9a9a9;
       }
     }
   }
   .logo {
+    padding: 1rem;
     width: 150px;
     display: inline;
   }
 
   .top-menu {
+    padding: 1rem;
     margin: 0;
 
     display: none;
@@ -62,4 +64,7 @@ header {
       }
     }
   }
+}
+.searchBox {
+  padding: 1rem;
 }

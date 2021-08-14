@@ -11300,15 +11300,17 @@ header .accountBar .act-menu li a {
   display: block;
   color: #334257;
 }
-header .accountBar .act-menu li:nth-child(2) {
+header .accountBar .act-menu li:nth-child(2n) {
   border-left: 1px solid #a9a9a9;
   border-right: 1px solid #a9a9a9;
 }
 header .logo {
+  padding: 1rem;
   width: 150px;
   display: inline;
 }
 header .top-menu {
+  padding: 1rem;
   margin: 0;
   display: none;
 }
@@ -11334,32 +11336,72 @@ header .top-menu li a :hover {
   background-color: #334257;
 }
 
+.searchBox {
+  padding: 1rem;
+}
+
 footer {
   height: 100px;
   width: 100%;
   background: #f0f0f0;
 }
 
-#hero {
+#hero,
+#wooHero {
   height: 200px;
   width: 100%;
   background: url("images/hero-img.jpg") #f0f0f0;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  color: #fff;
 }
 @media screen and (min-width: 800) {
-  #hero {
+  #hero,
+#wooHero {
     height: 300px;
   }
 }
+@media screen and (min-width: 1000px) {
+  #hero,
+#wooHero {
+    height: 350px;
+  }
+}
 @media screen and (min-width: 1200px) {
-  #hero {
+  #hero,
+#wooHero {
     height: 400px;
   }
 }
-#hero .heroH1 {
-  color: #fff;
+#hero .navbar,
+#wooHero .navbar {
+  font-size: 2rem;
+  border: 5px solid red;
+  display: none;
+}
+@media screen and (min-width: 1000px) {
+  #hero .navbar,
+#wooHero .navbar {
+    display: flex;
+    height: 350px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  #hero .navbar,
+#wooHero .navbar {
+    display: flex;
+    height: 400px;
+  }
+}
+
+.dropdown-menu {
+  min-width: 55rem;
+}
+
+.dropdown-menu[data-bs-popper] {
+  left: 5rem;
+  margin-top: -1rem;
 }
 
 .mainContainer {
@@ -11374,7 +11416,6 @@ footer {
   list-style-type: none;
   margin: 0;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
-  border-radius: 0.5rem;
   padding: 1.5rem;
 }
 .widget li {
@@ -11398,4 +11439,15 @@ footer {
 
 .page-numbers {
   padding: 0.5rem;
+}
+
+.wooActNav li {
+  list-style-type: none;
+}
+.wooActNav li a {
+  text-decoration: none;
+  padding: 0;
+  /* top | right | bottom | left */
+  margin: 0rem 0.5rem 0rem 0.5rem;
+  color: #334257;
 }
