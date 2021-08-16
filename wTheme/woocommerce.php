@@ -17,7 +17,7 @@
             'container_id'      => 'bs-example-navbar-collapse-1',
             'menu_class'        => 'nav flex-column',
             'fallback_cb'       => 'WP_Bootstrap_Navwalker::fallback',
-            'walker'            => new WP_Bootstrap_Navwalker(),
+            'walker'            => new  Walker_Nav_Hero(),
         ) );
         ?>
     </div>

@@ -38,38 +38,40 @@ register_nav_menus(
     )
     );
 
-/**
- * Register BootStrap Custom Navigation Walker
-*/
-function register_navwalker(){
-	require_once get_template_directory() . '/class-wp-bootstrap-navwalker.php';
-}
-add_action( 'after_setup_theme', 'register_navwalker' );
+// /**
+//  * Register BootStrap Custom Navigation Walker
+// */
+// function register_navwalker(){
+// 	require_once get_template_directory() . '/class-wp-bootstrap-navwalker.php';
+// }
+// add_action( 'after_setup_theme', 'register_navwalker' );
 
-add_filter( 'nav_menu_link_attributes', 'prefix_bs5_dropdown_data_attribute', 20, 3 );
+// add_filter( 'nav_menu_link_attributes', 'prefix_bs5_dropdown_data_attribute', 20, 3 );
+// /**
+//  * Use namespaced data attribute for Bootstrap's dropdown toggles.
+//  *
+//  * @param array    $atts HTML attributes applied to the item's `<a>` element.
+//  * @param WP_Post  $item The current menu item.
+//  * @param stdClass $args An object of wp_nav_menu() arguments.
+//  * @return array
+//  */
+// function prefix_bs5_dropdown_data_attribute( $atts, $item, $args ) {
+    //     if ( is_a( $args->walker, 'WP_Bootstrap_Navwalker' ) ) {
+        //         if ( array_key_exists( 'data-toggle', $atts ) ) {
+            //             unset( $atts['data-toggle'] );
+            //             $atts['data-bs-toggle'] = 'dropdown';
+            //         }
+            //     }
+            //     return $atts;
+            // }
+            
 /**
- * Use namespaced data attribute for Bootstrap's dropdown toggles.
- *
- * @param array    $atts HTML attributes applied to the item's `<a>` element.
- * @param WP_Post  $item The current menu item.
- * @param stdClass $args An object of wp_nav_menu() arguments.
- * @return array
+    * Register Custom Navigation Walker File
  */
-function prefix_bs5_dropdown_data_attribute( $atts, $item, $args ) {
-    if ( is_a( $args->walker, 'WP_Bootstrap_Navwalker' ) ) {
-        if ( array_key_exists( 'data-toggle', $atts ) ) {
-            unset( $atts['data-toggle'] );
-            $atts['data-bs-toggle'] = 'dropdown';
-        }
-    }
-    return $atts;
-}
 
-/**
- * Register Custom Navigation Walker File
-*/
 
 require get_template_directory() . '/include/walker.php';
+
 
 // Image Size
 add_image_size('post_image', 1100 , 750 , true);

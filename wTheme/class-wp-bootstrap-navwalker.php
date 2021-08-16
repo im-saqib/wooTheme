@@ -64,7 +64,7 @@ if ( ! class_exists( 'WP_Bootstrap_Navwalker' ) ) :
 			}
 			$indent = str_repeat( $t, $depth );
 			// Default class to add to the file.
-			$classes = array( 'dropdown-menu ddCustom' );
+			$classes = array( 'dropdown-menu' );
 			/**
 			 * Filters the CSS class(es) applied to a menu list element.
 			 *
@@ -216,7 +216,7 @@ if ( ! class_exists( 'WP_Bootstrap_Navwalker' ) ) :
 				$atts['data-toggle']   = 'dropdown';
 				$atts['aria-haspopup'] = 'true';
 				$atts['aria-expanded'] = 'false';
-				$atts['class']         = 'dropdown-toggle nav-link';
+				$atts['class']         = 'nav-link'; // Removed dropdown-toggle
 				$atts['id']            = 'menu-item-dropdown-' . $item->ID;
 			} else {
 				if ( true === $this->has_schema ) {

@@ -15,9 +15,9 @@
     <div class="container p-0 m-0">
         <div class="row d-flex align-items-center justify-content-between">
             <?php wp_nav_menu(
-            array(
+            array(  
                 'theme_location' => 'act-menu',
-                'menu_class' => 'act-menu'//add classes to elements
+                'menu_class' => 'act-menu',//add classes to elements
             )); ?>
         </div>
     </div>
@@ -41,7 +41,9 @@
     <?php wp_nav_menu(
         array(
             'theme_location' => 'top-menu',
-            'menu_class' => 'top-menu'//add classes to elements
+            'container' => false,
+            'menu_class' => 'top-menu',//add classes to elements
+            'depth' => 0,
         )); ?>
     </div>
 
